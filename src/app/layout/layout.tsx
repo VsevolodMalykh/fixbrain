@@ -26,6 +26,11 @@ function Layout() {
           <Link to={'/manage-bookings'} className={styles.header_link}>Manage Bookings</Link>
         </>}
 
+        {user?.role === 'admin' && <>
+          <Link to={'/manage-bookings'} className={styles.header_link}>Manage Bookings</Link>
+          <Link to={'/manage-bookings'} className={styles.header_link}>Manage Bookings</Link>
+        </>}
+
       </header>
       <main>
         <Outlet />
