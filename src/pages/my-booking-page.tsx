@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import {type BookingType } from "../entities/spaces/types/spaces-type"
 import { SpacesAPI } from "../entities/spaces/api/spaces-api"
+import { userStorage } from "../features/auth/model/userStorage"
 
 function MyBookingPage() {
   const [bookings, setBooking] = useState<BookingType[]>([])
-
+  const user = userStorage.getUser()
   useEffect(() => {
     SpacesAPI.getAllBookings().then(datsa => setBooking(datsa))
   }, [])
@@ -12,7 +13,7 @@ function MyBookingPage() {
     <div>
       <h1>Me Booking</h1>
       {
-        bookings.map(booking => (<div>
+        bookings.filter(el => el.User.id === user.id).map(booking => (<div>
           <h2>{booking.date}</h2>
           <p>{booking.comment}</p>
         </div>))
