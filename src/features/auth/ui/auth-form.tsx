@@ -22,11 +22,15 @@ function AuthForm() {
     const onSubmitHandler = async (data: AuthType) => {
         try {
             const response = await RegisterApi.login(data)
-            navigate('/')
+
+            if (!response) {
+                throw new Error(`Ошибка`)
+            }
             
             userStorage.setAccessToken(response.accessToken)
             userStorage.setUser(response.user)
             setUser(response.user)
+            navigate('/')
         } catch (error) {
         console.error(error);
     }
