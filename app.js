@@ -6,6 +6,6 @@ let counter = 0
 container.innerText = `Число кликов ${counter}`
 
 button.addEventListener('click',() => {
-    counter++;
+    counter += 2;
     console.log(counter)
 })
