@@ -1,4 +1,4 @@
-import ProfileCard from "../entities/profile/ui/profile-card"
+import ProfileCard from "../../entities/profile/ui/profile-card"
 
 function ProfilePage() {
   return (
