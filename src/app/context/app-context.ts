@@ -11,7 +11,7 @@ type DefaultValuesType = {
 
 const defaultValues: DefaultValuesType = {
     user: null,
-    setUser: () => { },
+    setUser: () => {},
     spaces: [],
     setSpaces: () => {}
 }
