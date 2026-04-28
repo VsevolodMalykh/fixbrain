@@ -3,9 +3,11 @@ const container = document.getElementById('container')
 
 let counter = 1
 
-container.innerText = `Число кликов ${counter}`
+container.innerText = `Число клюкв ${counter}`
 
 button.addEventListener('click',() => {
     counter += 2;
     console.log(counter)
+    console.log(counter)
+    counter = counter - 2
 })
