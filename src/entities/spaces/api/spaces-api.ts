@@ -1,5 +1,5 @@
 import { baseApi } from "../../../shared/lib/baseApi";
-import type { BookingPostType, SpaceType } from "../types/spaces-type";
+import type { BookingPostType, BookingType, SpaceType } from "../types/spaces-type";
 
 export class SpacesAPI {
     static async getAll(): Promise<SpaceType[]> {
@@ -27,6 +27,15 @@ export class SpacesAPI {
         } catch (error) {
             console.log(error)
             return false
+        }
+    }
+    static async getAllBookings(): Promise<BookingType[]> {
+        try {
+            const response = await (await baseApi.get('/bookings')).data
+            return response
+        } catch (error) {
+            console.log(error)
+            return []
         }
     }
 }
