@@ -40,7 +40,7 @@ export class SpacesAPI {
     }
     static async changeStatus(id: number, status:'approved' | 'rejected'){
         try {
-            const response = await (await baseApi.patch(`/bookings/${id}/status`, status)).data
+            const response = await (await baseApi.patch(`/bookings/${id}/status`, {status})).data
             return response
         } catch (error) {
             console.log(error)

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
-import { type BookingType } from "../entities/spaces/types/spaces-type"
-import { SpacesAPI } from "../entities/spaces/api/spaces-api"
-
+import { SpacesAPI } from "../../entities/spaces/api/spaces-api"
+import type { BookingType } from "../../entities/spaces/types/spaces-type"
 
 function ManageBookingPage() {
   const [bookings, setBooking] = useState<BookingType[]>([])
@@ -19,6 +18,7 @@ function ManageBookingPage() {
         bookings.map(booking => (<div key={booking.id}>
           <h2>{booking.date}</h2>
           <p>{booking.comment}</p>
+          <p>{booking.status}</p>
           {
             booking && booking.status === "pending" && <button type="button" onClick={() => changeStatus(booking.id, 'approved')}>aprove</button>
           }
