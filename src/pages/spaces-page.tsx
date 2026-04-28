@@ -2,7 +2,10 @@ import SpacesList from "../entities/spaces/ui/list/spaces-list"
 
 function SpacesPage() {
   return (
-    <div><SpacesList /></div>
+    <div>
+      <h1>Spaces</h1>
+      <SpacesList />
+    </div>
   )
 }
 
