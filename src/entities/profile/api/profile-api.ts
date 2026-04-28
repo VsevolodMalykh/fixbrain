@@ -1,36 +1,35 @@
-import { baseApi } from "../../../shared/lib/baseApi";
-import type { AuthType, RegType, TUserResponse } from "../types/user-type";
+import type { RegType, UserType } from "../../../features/auth/types/user-type"
+import { baseApi } from "../../../shared/lib/baseApi"
 
-export const RegisterApi = {
-    register: async (user: RegType): Promise<TUserResponse | undefined> => {
+export const ProfileApi = {
+    getMe: async (): Promise<UserType> => {
         try {
-          const res = await baseApi.post<TUserResponse>('/auth/register', user)
-          
-          if (res.status != 201) {
-            throw new Error(`Ошибка со статусом ${res.status}`)
-          }
-
-          return res.data 
-        } catch (error: unknown) {
-            if (typeof error === 'string') {
-                alert(error)
-            }
-        }  
-    },
-    login: async (user: AuthType): Promise<TUserResponse | undefined> => {
-        try {
-          const res = await baseApi.post<TUserResponse>('/auth/login', user)
+          const res = await baseApi.get<UserType>('/users/me')
           
           if (res.status != 200) {
             throw new Error(`Ошибка со статусом ${res.status}`)
           }
-
+    
           return res.data 
         } catch (error: unknown) {
             if (typeof error === 'string') {
                 alert(error)
             }
-            return;
+        }
+    },
+    updateMe: async (user: RegType): Promise<UserType> => {
+        try {
+          const res = await baseApi.patch<UserType>('/users/me', user)
+          
+          if (res.status != 200) {
+            throw new Error(`Ошибка со статусом ${res.status}`)
+          }
+    
+          return res.data 
+        } catch (error: unknown) {
+            if (typeof error === 'string') {
+                alert(error)
+            }
         }
     },
 }
