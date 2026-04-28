@@ -1,6 +1,15 @@
+import { Outlet } from "react-router"
+
 function Layout() {
   return (
-    <div>Layout</div>
+    <div>
+      <header>
+
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </div>
   )
 }
 
