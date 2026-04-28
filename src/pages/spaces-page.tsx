@@ -1,7 +1,8 @@
+import SpacesList from "../entities/spaces/ui/list/spaces-list"
 
 function SpacesPage() {
   return (
-    <div>SpacesPage</div>
+    <div><SpacesList /></div>
   )
 }
 
