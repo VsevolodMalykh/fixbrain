@@ -109,3 +109,16 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.error-text {
+  color: red;
+}
+
+ol {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.error-input {
+  border: 1px solid red;
+}

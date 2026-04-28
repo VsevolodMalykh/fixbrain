@@ -6,3 +6,12 @@ export type UserType = {
   role: 'guest' | 'client' | 'manager' | 'admin'
   isActive: boolean
 }
+
+export type TUserResponse = {
+    user: UserType
+    accessToken: string
+    refreshToken: string
+}
+
+export type RegType = Record<"password" | "email" | "name", string>
+export type AuthType = Omit<RegType, 'name'>
