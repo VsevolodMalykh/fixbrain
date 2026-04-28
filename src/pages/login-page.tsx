@@ -1,7 +1,11 @@
+import RegisterForm from "../features/auth/ui/register-form"
 
 function LoginPage() {
   return (
-    <div>LoginPage</div>
+    <div>
+      <h1>Авторизация!</h1>
+      <RegisterForm />
+    </div>
   )
 }
 
