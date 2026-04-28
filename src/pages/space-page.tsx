@@ -2,7 +2,7 @@
 
 function SpacePage() {
   return (
-    <div>SpacePage</div>
+    <div></div>
   )
 }
 
