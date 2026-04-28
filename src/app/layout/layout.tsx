@@ -14,15 +14,15 @@ function Layout() {
 
         {!user && <>
           <Link to={'/register'} className={styles.header_link}>Register</Link>
-          <Link to={'/login'} className={styles.header_link}>Login</Link>        
+          <Link to={'/login'} className={styles.header_link}>Login</Link>
         </>}
 
-        {user && <>       
+        {user && <>
           <Link to={'/my-bookings'} className={styles.header_link}>My Bookings</Link>
           <Link to={'/profile'} className={styles.header_link}>Profile</Link>
         </>}
 
-        {user?.role === 'manager' && <>       
+        {user?.role === 'manager' && <>
           <Link to={'/manage-bookings'} className={styles.header_link}>Manage Bookings</Link>
         </>}
 

@@ -12,7 +12,7 @@ function ProfileCard() {
   useEffect(() => {
     ProfileApi.getMe().then(data => setUser(data)).catch(error => console.error(error))
   }, [])
-  
+
   if (!user) {
     return (
       <>
@@ -20,7 +20,7 @@ function ProfileCard() {
       </>
     )
   }
-  
+
   return (
     <div className={styles.card}>
       <h3>{user.name}</h3>

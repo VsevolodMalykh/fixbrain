@@ -30,16 +30,16 @@ function ProfileForm() {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmitHandler)}>
-        <label>
-          <input type="text" {...register('name')} />
+        <label>Имя
+          <input className={errors.name ? 'error-input' : ''} type="text" {...register('name')} placeholder="Имя" />
           {errors.name && <span className="error-text">{errors.name.message}</span>}
         </label>
-        <label>
-          <input type="email" {...register('email')} />
+        <label>Почта
+          <input className={errors.email ? 'error-input' : ''} type="email" {...register('email')} placeholder="Почта" />
           {errors.email && <span className="error-text">{errors.email.message}</span>}
         </label>
-        <label>
-          <input type="password" {...register('password')} />
+        <label>Пароль
+          <input className={errors.password ? 'error-input' : ''} type="password" {...register('password')} placeholder="Пароль" />
           {errors.password && <span className="error-text">{errors.password.message}</span>}
         </label>
 

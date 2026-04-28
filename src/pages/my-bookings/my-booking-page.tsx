@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import {type BookingType } from "../../entities/spaces/types/spaces-type"
+import { type BookingType } from "../../entities/spaces/types/spaces-type"
 import { SpacesAPI } from "../../entities/spaces/api/spaces-api"
 import styles from './styles.module.css'
 
