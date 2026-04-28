@@ -8,3 +8,11 @@ export type SpaceType =  {
   description: string
   images: string[]
 }
+
+export type BookingPostType = {
+    spaceId: number,
+    date: string,
+    timeFrom: string,
+    timeTo: string,
+    comment: string
+}

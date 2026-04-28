@@ -1,8 +1,10 @@
 import { useContext, useEffect } from "react"
 import { AppContext } from "../../../../app/context/app-context"
 import { SpacesAPI } from "../../api/spaces-api"
+import { useNavigate } from "react-router"
 
 function SpacesList() {
+    const navigate = useNavigate()
     const {spaces, setSpaces} = useContext(AppContext)
     useEffect(() => {
         SpacesAPI.getAll().then(data => setSpaces(data))
@@ -10,7 +12,7 @@ function SpacesList() {
   return (
     <div>
         {spaces.map(space => (
-            <div>
+            <div key={space.id} onClick={() => navigate(`/spaces/${space.id}`)}>
                 <h2>{space.title}</h2>
                 <p>{space.description}</p>
                 <p>{space.capacity}</p>
