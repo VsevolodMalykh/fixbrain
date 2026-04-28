@@ -1,10 +1,10 @@
 import { baseApi } from "../../../shared/lib/baseApi";
-import type { TUser, TUserRespose } from "../model/types";
+import type { AuthType, RegType, TUserResponse } from "../types/user-type";
 
 export const RegisterApi = {
-    register: async (user: TUser): Promise<TUserRespose | undefined> => {
+    register: async (user: RegType): Promise<TUserResponse | undefined> => {
         try {
-          const res = await baseApi.post<TUserRespose>('/auth/register', user)
+          const res = await baseApi.post<TUserResponse>('/auth/register', user)
           
           if (res.status != 201) {
             throw new Error(`Ошибка со статусом ${res.status}`)
@@ -17,9 +17,9 @@ export const RegisterApi = {
             }
         }  
     },
-    login: async (user: TUser): Promise<TUserRespose | undefined> => {
+    login: async (user: AuthType): Promise<TUserResponse | undefined> => {
         try {
-          const res = await baseApi.post<TUserRespose>('/auth/login', user)
+          const res = await baseApi.post<TUserResponse>('/auth/login', user)
           
           if (res.status != 201) {
             throw new Error(`Ошибка со статусом ${res.status}`)
