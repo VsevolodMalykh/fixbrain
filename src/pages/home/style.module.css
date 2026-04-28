@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container__blocks {
+  display: flex;
+  gap: 48px;
+}
+
+.container__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.container li {
+  justify-self: start;
+}

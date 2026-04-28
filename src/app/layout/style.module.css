@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-self: center;
+  gap: 16px;
+}
+
+.header_link {
+  text-decoration: none;
+}
