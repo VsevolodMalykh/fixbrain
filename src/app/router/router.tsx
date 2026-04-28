@@ -1,14 +1,14 @@
 import { createBrowserRouter } from "react-router";
 import Layout from "../layout/layout";
-import ErrorPage from "../../pages/error-page";
-import HomePage from "../../pages/home-page";
-import RegisterPage from "../../pages/register-page";
-import LoginPage from "../../pages/login-page";
-import SpacesPage from "../../pages/spaces-page";
-import SpacePage from "../../pages/space-page";
-import ProfilePage from "../../pages/profile-page";
-import MyBookingPage from "../../pages/my-booking-page";
-import ManageBookingPage from "../../pages/manage-booking-page";
+import ErrorPage from "../../pages/error/error-page";
+import HomePage from "../../pages/home/home-page";
+import RegisterPage from "../../pages/register/register-page";
+import LoginPage from "../../pages/login/login-page";
+import SpacesPage from "../../pages/spaces/spaces-page";
+import SpacePage from "../../pages/space/space-page";
+import ProfilePage from "../../pages/profile/profile-page";
+import MyBookingPage from "../../pages/my-bookings/my-booking-page";
+import ManageBookingPage from "../../pages/manage-bookings/manage-booking-page";
 
 export const router = createBrowserRouter([
     {

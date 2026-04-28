@@ -3,6 +3,7 @@ import { ProfileApi } from "../api/profile-api"
 import type { UserType } from "../../../features/auth/types/user-type"
 import { userStorage } from "../../../features/auth/model/userStorage"
 import ProfileForm from "./profile-form"
+import styles from './style.module.css'
 
 function ProfileCard() {
   const [user, setUser] = useState<UserType | null>(userStorage.getUser())
@@ -21,7 +22,7 @@ function ProfileCard() {
   }
   
   return (
-    <div>
+    <div className={styles.card}>
       <h3>{user.name}</h3>
       <p>{user.role}</p>
       <p>{user.email}</p>

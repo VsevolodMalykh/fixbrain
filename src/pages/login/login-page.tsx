@@ -1,4 +1,4 @@
-import AuthForm from "../features/auth/ui/auth-form"
+import AuthForm from "../../features/auth/ui/auth-form"
 
 function LoginPage() {
   return (

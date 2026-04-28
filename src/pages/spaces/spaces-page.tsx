@@ -1,4 +1,4 @@
-import SpacesList from "../entities/spaces/ui/list/spaces-list"
+import SpacesList from "../../entities/spaces/ui/list/spaces-list"
 
 function SpacesPage() {
   return (
