@@ -1,7 +1,7 @@
 const button = document.getElementById('counterButton')
 const container = document.getElementById('container')
 
-let counter = 42
+let counter = 1
 
 container.innerText = `Число клюкв ${counter}`
 
