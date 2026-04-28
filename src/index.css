@@ -118,3 +118,7 @@ ol {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+.error-input {
+  border: 1px solid red;
+}

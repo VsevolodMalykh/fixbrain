@@ -18,7 +18,7 @@ function AuthForm() {
     })
 
     const navigate = useNavigate()
-    const {setUser} = useContext(AppContext)
+    const { setUser } = useContext(AppContext)
     const onSubmitHandler = async (data: AuthType) => {
         try {
             const response = await RegisterApi.login(data)
@@ -26,32 +26,32 @@ function AuthForm() {
             if (!response) {
                 throw new Error(`Ошибка`)
             }
-            
+
             userStorage.setAccessToken(response.accessToken)
             userStorage.setUser(response.user)
             setUser(response.user)
             navigate('/')
         } catch (error) {
-        console.error(error);
+            console.error(error);
+        }
     }
-}
 
-return (
-    <div>
-        <form onSubmit={handleSubmit(onSubmitHandler)}>
-            <label>
-                <input type="email" {...register('email')} />
-                {errors.email && <span className="error-text">{errors.email.message}</span>}
-            </label>
-            <label>
-                <input type="password" {...register('password')} />
-                {errors.password && <span className="error-text">{errors.password.message}</span>}
-            </label>
+    return (
+        <div>
+            <form onSubmit={handleSubmit(onSubmitHandler)}>
+                <label>Почта
+                    <input className={errors.email ? 'error-input' : ''} type="email" {...register('email')} placeholder="Почта" />
+                    {errors.email && <span className="error-text">{errors.email.message}</span>}
+                </label>
+                <label>Пароль
+                    <input className={errors.password ? 'error-input' : ''} type="password" {...register('password')} placeholder="Пароль" />
+                    {errors.password && <span className="error-text">{errors.password.message}</span>}
+                </label>
 
-            <button type="submit">Отправить</button>
-        </form>
-    </div>
-)
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    )
 }
 
 export default AuthForm

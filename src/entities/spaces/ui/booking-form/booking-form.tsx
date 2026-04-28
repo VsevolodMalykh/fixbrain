@@ -10,7 +10,7 @@ function BookingForm({ id }: { id: number }) {
         try {
             await SpacesAPI.bookingSpace({ ...data, spaceId: id })
             console.log(await SpacesAPI.bookingSpace({ ...data, spaceId: id }));
-            
+
         } catch (error) {
             console.error(error);
         }
@@ -19,20 +19,20 @@ function BookingForm({ id }: { id: number }) {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmitHandler)}>
-                <label>
-                    <input type="text" placeholder="comment" {...register('comment')} />
+                <label>Комментарий
+                    <input className={errors.comment ? 'error-input' : ''} type="text" placeholder="comment" {...register('comment')} />
                     {errors.comment && <span className="error-text">{errors.comment.message}</span>}
                 </label>
-                <label>
-                    <input type="text" placeholder="date" {...register('date')} />
+                <label>Дата
+                    <input className={errors.date ? 'error-input' : ''} type="text" placeholder="date" {...register('date')} />
                     {errors.date && <span className="error-text">{errors.date.message}</span>}
                 </label>
-                <label>
-                    <input type="text" placeholder="timeFrom" {...register('timeFrom')} />
+                <label>Со скольки
+                    <input className={errors.timeFrom ? 'error-input' : ''} type="text" placeholder="timeFrom" {...register('timeFrom')} />
                     {errors.timeFrom && <span className="error-text">{errors.timeFrom.message}</span>}
                 </label>
-                <label>
-                    <input type="text" placeholder="timeTo" {...register('timeTo')} />
+                <label>До скольки
+                    <input className={errors.timeTo ? 'error-input' : ''} type="text" placeholder="timeTo" {...register('timeTo')} />
                     {errors.timeTo && <span className="error-text">{errors.timeTo.message}</span>}
                 </label>
 

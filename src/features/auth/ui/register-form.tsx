@@ -18,7 +18,7 @@ function RegisterForm() {
     })
 
     const navigate = useNavigate()
-        const {setUser} = useContext(AppContext)
+    const { setUser } = useContext(AppContext)
 
     const onSubmitHandler = async (data: RegType) => {
         try {
@@ -36,16 +36,16 @@ function RegisterForm() {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmitHandler)}>
-                <label>
-                    <input type="text" placeholder="name" {...register('name')} />
+                <label>Имя
+                    <input className={errors.name ? 'error-input' : ''} type="text" placeholder="name" {...register('name')} />
                     {errors.name && <span className="error-text">{errors.name.message}</span>}
                 </label>
-                <label>
-                    <input type="email" placeholder="email" {...register('email')} />
+                <label>Почта
+                    <input className={errors.email ? 'error-input' : ''} type="email" placeholder="email" {...register('email')} />
                     {errors.email && <span className="error-text">{errors.email.message}</span>}
                 </label>
-                <label>
-                    <input type="password" placeholder="password" {...register('password')} />
+                <label>Пароль
+                    <input className={errors.password ? 'error-input' : ''} type="password" placeholder="password" {...register('password')} />
                     {errors.password && <span className="error-text">{errors.password.message}</span>}
                 </label>
 
