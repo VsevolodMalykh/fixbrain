@@ -3,6 +3,6 @@ export type UserType = {
   email: string
   name: string
   password: string
-  role: 'guest' | 'client' | 'manager' | 'admin'
+  role: 'guest' | 'client' | 'manager'
   isActive: boolean
 }

@@ -1,7 +1,9 @@
 
 function MyBookingPage() {
   return (
-    <div>MyBookingPage</div>
+    <div>
+      <h1>Me Booking</h1>
+    </div>
   )
 }
 
