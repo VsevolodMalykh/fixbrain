@@ -1,10 +1,10 @@
-import RegisterForm from "../features/auth/ui/register-form"
+import AuthForm from "../features/auth/ui/auth-form"
 
 function LoginPage() {
   return (
     <div>
       <h1>Авторизация!</h1>
-      <RegisterForm />
+      <AuthForm />
     </div>
   )
 }
